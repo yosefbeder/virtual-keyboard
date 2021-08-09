@@ -27,10 +27,13 @@ const Key: React.FC<KeyProps> = props => {
   const onPress = props.onPress || emptyFunction;
   const onUp = props.onUp || emptyFunction;
 
-  const className = `${classes.key} ${/(tab|caps|enter|backspace)/g.test(
+  const className = `${classes.key} ${/tab|caps|enter|backspace/.test(
     props.type
-  ) && classes["key--span-2"]} ${/(shift|space|caps)/g.test(props.type) &&
-    classes[`key--${props.type}`]}`;
+  ) && classes["key--span-2"]} ${/shift|space|caps/.test(props.type) &&
+    classes[`key--${props.type}`]} ${(props.type === "shift" ||
+    props.type === "caps") &&
+    props.isActive &&
+    classes["key--active"]}`;
 
   const content =
     props.type === "normal" ? props.character : IconsMap.get(props.type);

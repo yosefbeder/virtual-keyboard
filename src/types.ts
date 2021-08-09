@@ -20,10 +20,10 @@ interface NormalKeyProps {
 
 type SpecialKeyProps =
   | {
-      type: "tab" | "shift" | "space" | "enter" | "backspace";
+      type: "tab" | "space" | "enter" | "backspace";
     }
   | {
-      type: "caps";
+      type: "caps" | "shift";
       isActive: boolean;
     };
 

@@ -7,22 +7,55 @@
 ## Install
 
 ```bash
-npm install --save @yosefbeder/virtual-keyboard
+npm install @yosefbeder/virtual-keyboard
 ```
 
 ## Usage
 
-```tsx
-import React, { Component } from 'react'
+```jsx
+import React, { useState } from "react";
 
-import MyComponent from '@yosefbeder/virtual-keyboard'
-import '@yosefbeder/virtual-keyboard/dist/index.css'
+import Keyboard from "@yosefbeder/virtual-keyboard";
+import "@yosefbeder/virtual-keyboard/dist/index.css";
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+const App = () => {
+  const [value, setValue] = useState("");
+
+  return (
+    <>
+      <textarea value={`${value}|`} />
+      <Keyboard
+        onKeyUp={({ _, character }) => {
+          {
+            setValue(prev => prev.concat(character));
+          }
+        }}
+        onKeyDown={({ type, character }) => {
+          if (type !== "normal") {
+            if (type === "backspace") {
+              setValue(prev => prev.slice(0, -1));
+              console.log("backspace-button");
+            } else {
+              setValue(prev => prev.concat(character));
+            }
+          }
+        }}
+        onKeyPress={({ type, character }) => {
+          if (type !== "normal") {
+            if (type === "backspace") {
+              setValue(prev => prev.slice(0, -1));
+              console.log("backspace-button");
+            } else {
+              setValue(prev => prev.concat(character));
+            }
+          } else {
+            setValue(prev => prev.concat(character));
+          }
+        }}
+      />
+    </>
+  );
+};
 ```
 
 ## License

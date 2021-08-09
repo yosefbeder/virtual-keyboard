@@ -52,8 +52,8 @@ const KeyBoard: React.FC<KeyboardProps> = ({
       props.isActive = isCapsActive;
       props.onDown = () => setIsCapsActive(prev => !prev);
     } else if (props.type === "shift") {
-      props.onDown = () => setIsShiftActive(true);
-      props.onUp = () => setIsShiftActive(false);
+      props.isActive = isShiftActive;
+      props.onDown = () => setIsShiftActive(prev => !prev);
     } else {
       props.onDown = onKeyDown?.bind(null, {
         type: props.type,
