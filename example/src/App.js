@@ -1,10 +1,45 @@
-import React from 'react'
+import React, { useState } from "react";
 
-import { ExampleComponent } from '@yosefbeder/virtual-keyboard'
-import '@yosefbeder/virtual-keyboard/dist/index.css'
+import Keyboard from "@yosefbeder/virtual-keyboard";
+import "@yosefbeder/virtual-keyboard/dist/index.css";
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  const [value, setValue] = useState("");
 
-export default App
+  return (
+    <>
+      <textarea value={`${value}|`} />
+      <Keyboard
+        onKeyUp={({ _, character }) => {
+          {
+            setValue(prev => prev.concat(character));
+          }
+        }}
+        onKeyDown={({ type, character }) => {
+          if (type !== "normal") {
+            if (type === "backspace") {
+              setValue(prev => prev.slice(0, -1));
+              console.log("backspace-button");
+            } else {
+              setValue(prev => prev.concat(character));
+            }
+          }
+        }}
+        onKeyPress={({ type, character }) => {
+          if (type !== "normal") {
+            if (type === "backspace") {
+              setValue(prev => prev.slice(0, -1));
+              console.log("backspace-button");
+            } else {
+              setValue(prev => prev.concat(character));
+            }
+          } else {
+            setValue(prev => prev.concat(character));
+          }
+        }}
+      />
+    </>
+  );
+};
+
+export default App;
