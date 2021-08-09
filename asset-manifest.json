@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/@yosefbeder/virtual-keyboard/static/css/main.8d26eae5.chunk.css",
+    "main.js": "/@yosefbeder/virtual-keyboard/static/js/main.fb4ab44c.chunk.js",
+    "main.js.map": "/@yosefbeder/virtual-keyboard/static/js/main.fb4ab44c.chunk.js.map",
+    "runtime-main.js": "/@yosefbeder/virtual-keyboard/static/js/runtime-main.231d35d1.js",
+    "runtime-main.js.map": "/@yosefbeder/virtual-keyboard/static/js/runtime-main.231d35d1.js.map",
+    "static/js/2.59b8ae52.chunk.js": "/@yosefbeder/virtual-keyboard/static/js/2.59b8ae52.chunk.js",
+    "static/js/2.59b8ae52.chunk.js.map": "/@yosefbeder/virtual-keyboard/static/js/2.59b8ae52.chunk.js.map",
+    "index.html": "/@yosefbeder/virtual-keyboard/index.html",
+    "precache-manifest.d3eba5a93142a6f31ec68b2875b46806.js": "/@yosefbeder/virtual-keyboard/precache-manifest.d3eba5a93142a6f31ec68b2875b46806.js",
+    "service-worker.js": "/@yosefbeder/virtual-keyboard/service-worker.js",
+    "static/css/main.8d26eae5.chunk.css.map": "/@yosefbeder/virtual-keyboard/static/css/main.8d26eae5.chunk.css.map",
+    "static/js/2.59b8ae52.chunk.js.LICENSE.txt": "/@yosefbeder/virtual-keyboard/static/js/2.59b8ae52.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.231d35d1.js",
+    "static/js/2.59b8ae52.chunk.js",
+    "static/css/main.8d26eae5.chunk.css",
+    "static/js/main.fb4ab44c.chunk.js"
+  ]
+}
