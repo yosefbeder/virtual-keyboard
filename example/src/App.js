@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Keyboard from "@yosefbeder/virtual-keyboard";
 import "@yosefbeder/virtual-keyboard/dist/index.css";
 
 const App = () => {
   const [value, setValue] = useState("");
+  const [lineIsSown, setLineIsShown] = useState(true);
+
+  useEffect(() => {
+    setInterval(() => {
+      setLineIsShown(prev => !prev);
+    }, 500);
+  }, []);
 
   return (
     <>
-      <textarea value={`${value}|`} />
+      <div className="typing-area">
+        {`${value}${lineIsSown ? "|" : ""}`.split("\n").map(line => (
+          <pre>{line}</pre>
+        ))}
+      </div>
       <Keyboard
         onKeyUp={({ _, character }) => {
           {

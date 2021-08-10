@@ -5,7 +5,7 @@ import { KeyType, KeyProps, KeyboardProps } from "../types";
 import classes from "../styles/keyboard.module.css";
 
 const charactersMap = new Map<"tab" | "enter" | "space", string>([
-  ["tab", "     "],
+  ["tab", "    "],
   ["space", " "],
   ["enter", "\n"]
 ]);
