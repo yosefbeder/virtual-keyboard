@@ -31,7 +31,7 @@ const KeyBoard: React.FC<KeyboardProps> = ({
 
   // transfering the row data into valid props
   const keys = variant.map((keyValue, index) => {
-    const keyType = /(tab|caps|shift|space|enter|backspace)/g.test(keyValue)
+    const keyType = /tab|caps|shift|space|enter|backspace/.test(keyValue)
       ? (keyValue as KeyType)
       : "normal";
 
